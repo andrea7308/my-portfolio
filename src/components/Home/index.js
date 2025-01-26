@@ -19,7 +19,7 @@ const Home = () => {
           <br />
           Computer Engineer
           </h1>
-          <h2>Computer Engineering Student at New York University Tandon 
+          <h2>Computer Engineering student at New York University Tandon 
             School of Engineering with a minor in Robotics
           </h2>
           <Link to="/contact" className='flat-button'>CONTACT ME</Link>
