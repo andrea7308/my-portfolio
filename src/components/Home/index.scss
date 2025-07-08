@@ -36,7 +36,6 @@
       position: absolute;
       margin-top: 18pxx;
       margin-left: 20px;
-      animation: fadeIn 1s 1.7s backwards;
       opacity: 0.6;
 
     }
@@ -47,15 +46,15 @@ h2 {
   color: #8d8d8d;
   font-weight: 400;
   margin-top: 20px;
-  font-size: 11px;
-  font-family: sans-serif;
+  font-size: 16px;
+  font-family: 'Coolvetica';
   letter-spacing: 3px;
-  animation: fadeIn 1s 1.8s backwards;
+  animation: fadeIn 1s 4.2s backwards;
 }
 
 .flat-button {
   color: #fd9bc2;
-  font-size: 13px;
+  font-size: 20px;
   font-weight: 400;
   letter-spacing: 4px;
   font-family: sans-serif;
@@ -63,13 +62,14 @@ h2 {
   padding: 10px 18px;
   border: 1px solid #fd9bc2;
   margin-top: 25px;
+  margin-left: 280px;
   float: left;
-  animation: fadeIn 1s 1.8s backwards;
+  animation: fadeIn 1s 5.7s backwards;
   white-space: nowrap;
 
   &:hover {
     background: #fd9bc2;
-    color: #333;
+    color: #ffffff;
   }
 
 }

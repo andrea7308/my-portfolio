@@ -7,7 +7,7 @@ const Layout = () => {
     <div className="App">
         <Sidebar />
         <div className='page'>
-            <span className='tags'></span>
+            <span className='tags top-tags'>&lt;body&gt;</span>
 
             <Outlet/>
 
@@ -21,4 +21,4 @@ const Layout = () => {
     )
 }
 
-export default Layout
+export default Layout;
