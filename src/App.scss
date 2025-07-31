@@ -1,5 +1,18 @@
-.App {
+body, .App {
+  overflow-x: hidden;
   text-align: center;
+  display: flex;
+
+  .nav-bar {
+    position: fixed;
+    width: 80px;
+    height: 100%;
+  }
+
+  .page {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+  }
 }
 
 $primary-color: #ffa6c9;
@@ -25,3 +38,15 @@ input,
 textarea {
   font-family: 'Helvetica Neue';
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  min-height: 100vh;
+  padding: 60px 20px;
+  scroll-margin-top: 80px;
+  box-sizing: border-box;
+}
+

@@ -1,8 +1,7 @@
-
 import "./index.scss"
-import { Link } from 'react-router-dom'
 import React from 'react'
 import Typewriter from "../Typewriter";
+import { Link as ScrollLink } from 'react-scroll';
 
 const Home = () => {
   return (
@@ -15,7 +14,16 @@ const Home = () => {
             I'm a Computer Engineering major with a minor in Robotics 
             at NYU Tandon.
           </h2>
-          <Link to="/contact" className='flat-button'>CONTACT ME</Link>
+          
+         <ScrollLink
+          to="contact"
+          smooth={true}
+          duration={500}
+          offest={-50}
+          className='flat-button'
+          >
+            CONTACT ME
+          </ScrollLink>
         </div>
 
       </div>
@@ -23,4 +31,4 @@ const Home = () => {
   );
 }
 
-export default Home
+export default Home;
