@@ -10,17 +10,17 @@ function Projects() {
             </a>
             <div className="project-list">
                 <div className="project">
-                    <h3>Project 1 - April Tag Detection</h3>
-                    <p>In my work this past semester with the NYU Robotic Design, I focused on using AprilTags to improve a robot's 
-                        ability to recognize and locate objects in its environment. I set up a system
-                        that could detect and distinguish between multiple AprilTags, allowing for 
-                        accurate positioning within about ±5 cm. I programmed the camera to read tags 
-                        from 0.5 to 3 meters away and worked on implementing transformations between 
-                        the robot and tag positions for consistent spatial alignment. To make it 
-                        versatile, I configured ROS to support multiple tag families and sizes, so 
-                        the system could handle up to 15 tags at different scales. This setup is expected to 
-                        allow the robot to navigate the terrain at the NASA Lunarbotics Competetition this 
-                        upcoming Spring.</p>
+                <h3>Project 1 - April Tag Detection</h3>
+                <p>In my work this past semester with the NYU Robotic Design, I focused on using AprilTags to improve a robot's 
+                    ability to recognize and locate objects in its environment. I set up a system
+                    that could detect and distinguish between multiple AprilTags, allowing for 
+                    accurate positioning within about ±5 cm. I programmed the camera to read tags 
+                    from 0.5 to 3 meters away and worked on implementing transformations between 
+                    the robot and tag positions for consistent spatial alignment. To make it 
+                    versatile, I configured ROS to support multiple tag families and sizes, so 
+                    the system could handle up to 15 tags at different scales. This setup is expected to 
+                    allow the robot to navigate the terrain at the NASA Lunarbotics Competetition this 
+                    upcoming Spring.</p>
                 </div>
                 <div className="project">
                     <h3>Project 2 - Autonomy</h3>

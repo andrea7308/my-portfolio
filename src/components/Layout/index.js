@@ -1,15 +1,15 @@
-import React from 'react'
 import './index.scss';
-import Navbar from '../Navbar';
+import Sidebar from '../Sidebar'
+import { Outlet } from 'react-router-dom';
 
-const Layout = ({ children }) => {
+const Layout = () => {
     return (
     <div className="App">
-        <Navbar />
+        <Sidebar />
         <div className='page'>
-            <span className='tags top-tags'>&lt;body&gt;</span>
+            <span className='tags'></span>
 
-            {children}
+            <Outlet/>
 
             <span className='tags bottom-tags'>
             &lt;//body&gt;
@@ -21,4 +21,4 @@ const Layout = ({ children }) => {
     )
 }
 
-export default Layout;
+export default Layout
