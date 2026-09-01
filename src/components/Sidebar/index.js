@@ -8,18 +8,38 @@ import { faEnvelope, faHome, faUser } from '@fortawesome/free-solid-svg-icons'
 
 const Sidebar = () => (
     <div className='nav-bar'>
-        <Link className='logo' to='/'>
+        <Link className='logo pixel-corners' to='/'>
             <img src={Logo} alt = "logo" />
         </Link>
         <nav>
             <NavLink exact="true" activeclassname="active" to ="/">
-                <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
+                <span className='icon-box pixel-corners'>
+                    <FontAwesomeIcon icon={faHome} />
+                </span>
             </NavLink>
+
+            <span className='dot-trail'>
+                <span className='pac-dot'></span>
+                <span className='pac-dot'></span>
+                <span className='pac-dot'></span>
+            </span>
+
             <NavLink exact="true" activeclassname="active" className="about-link" to ="/about">
-                <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
+                <span className='icon-box pixel-corners'>
+                    <FontAwesomeIcon icon={faUser} />
+                </span>
             </NavLink>
+
+            <span className='dot-trail'>
+                <span className='pac-dot'></span>
+                <span className='pac-dot'></span>
+                <span className='pac-dot'></span>
+            </span>
+
             <NavLink exact="true" activeclassname="active" className="contact-link" to ="/contact">
-                <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
+                <span className='icon-box pixel-corners'>
+                    <FontAwesomeIcon icon={faEnvelope} />
+                </span>
             </NavLink>
             
         </nav>
