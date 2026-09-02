@@ -2,6 +2,7 @@ import "./index.scss"
 import Typewriter from "typewriter-effect"
 import { useState } from "react"
 import Projects from "../../pages/Projects"
+import Contact from "../../pages/Contact"
 
 const Home = () => {
   const [typingDone, setTypingDone] = useState(false)
@@ -37,6 +38,10 @@ const Home = () => {
 
         <section className="projects-section">
           <Projects />
+        </section>
+
+        <section className="contact-section">
+          <Contact />
         </section>
       </div>
     </div>
