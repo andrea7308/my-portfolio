@@ -2,6 +2,7 @@
   position: relative;
   width: 100%;
   min-height: auto;
+  scroll-behavior: smooth;
 
   .home-scroll-track {
     width: 100%;
@@ -13,6 +14,7 @@
     width: 100%;
     height: 100vh;
     position: relative;
+    scroll-margin-top: 60px;
   }
 
   .text-zone {
@@ -50,19 +52,25 @@
   }
 }
 
-/* ---------- Projects section (revealed by scrolling) ---------- */
 .projects-section {
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 8%;
+  padding: 80px 8%;
   box-sizing: border-box;
 
   .projects {
     max-width: 1200px;
     width: 100%;
   }
+
+  .projects-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 11px;
 
     a {
       text-decoration: none;
@@ -72,37 +80,207 @@
       font-family: 'Press Start 2P', 'Coolvetica', cursive;
       color: var(--pink-dark, #fd9bc2);
       font-size: 20px;
-      letter-spacing: 2px;
-      margin-bottom: 30px;
+      letter-spacing: 3px;
+      margin: 0;
+    }
+  }
+
+  .project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 32px;
+    margin-bottom: 14px;
+  }
+
+  .project {
+    background: var(--pink-light, #febed8);
+    border: 3px solid var(--pink-dark, #fd9bc2);
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 6px 6px 0 var(--pink-deep, #e8639e);
     }
 
-    .project-list {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
+    .project-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
 
-    .project {
-      background: var(--pink-light, #febed8);
-      border: 3px solid var(--pink-dark, #fd9bc2);
-      padding: 20px 24px;
-      text-align: left;
-
-      h3 {
+      .player-tag {
+        background: var(--pink-deep, #e8639e);
+        color: #fff;
         font-family: 'Press Start 2P', sans-serif;
-        font-size: 13px;
-        color: #4d4d4e;
-        margin: 0 0 12px;
-        letter-spacing: 1px;
+        font-size: 11px;
+        padding: 5px 8px;
       }
 
-      p {
-        font-family: 'Helvetica Neue', sans-serif;
-        font-size: 14px;
-        line-height: 1.6;
+      .project-category {
+        font-family: 'Press Start 2P', sans-serif;
+        font-size: 8px;
+        letter-spacing: 1px;
+        color: var(--pink-deep, #e8639e);
+      }
+    }
+
+    /* Reserved visual slot — placeholder "screen" for now. Swap the
+       .screen-note (and cube, for the model3d variant) for a real
+       <img>, <video>, or react-three-fiber <Canvas> when ready. */
+    .project-screen {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #2b1f28;
+      border: 3px solid #fff;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .screen-scanlines {
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.06) 0px,
+          rgba(255, 255, 255, 0.06) 1px,
+          transparent 1px,
+          transparent 3px
+        );
+        pointer-events: none;
+        animation: scanlineDrift 6s linear infinite;
+      }
+
+      .screen-glow {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at center, rgba(253, 155, 194, 0.25), transparent 70%);
+        animation: dotPulse 3s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      .screen-note {
+        position: relative;
+        z-index: 1;
+        font-family: 'Press Start 2P', sans-serif;
+        font-size: 9px;
+        letter-spacing: 1px;
+        color: var(--pink-light, #febed8);
+        text-align: center;
+        padding: 0 12px;
+        animation: dotPulse 1.6s ease-in-out infinite;
+      }
+    }
+
+    h3 {
+      font-family: 'Press Start 2P', sans-serif;
+      font-size: 13px;
+      color: #4d4d4e;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    .project-desc {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #4d4d4e;
+      margin: 0;
+    }
+
+    .project-hover-link {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 10;
+
+      a {
+        display: inline-block;
+        padding: 12px 24px;
+        background: var(--pink-deep, #e8639e);
+        color: #fff;
+        text-decoration: none;
+        font-family: 'Press Start 2P', sans-serif;
+        font-size: 10px;
+        letter-spacing: 1px;
+        border: 3px solid #fff;
+        transition: all 0.2s ease;
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+
+        &:hover {
+          background: var(--pink-light, #febed8);
+          color: var(--pink-deep, #e8639e);
+          transform: translateY(-2px);
+          box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        &:active {
+          transform: translateY(0);
+          box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+
+    &:hover .project-hover-link {
+      opacity: 1;
+    }
+
+    /* .stat-block removed - no longer displayed */
+
+      .stat-label {
         color: #4d4d4e;
-        margin: 0;
+      }
+
+      .stat-value {
+        color: var(--pink-deep, #e8639e);
       }
     }
   }
+
+
+@keyframes scanlineDrift {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 40px; }
+}
+
+/* Small CSS-only rotating wireframe cube, used as a placeholder hint
+   inside the "model3d" screen slot until a real 3D render replaces it. */
+.loading-cube {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  transform-style: preserve-3d;
+  animation: cubeSpin 6s linear infinite;
+  margin-bottom: 34px;
+
+  .cube-face {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border: 2px solid var(--pink, #ffa6c9);
+    background: rgba(255, 166, 201, 0.08);
+  }
+
+  .front  { transform: translateZ(22px); }
+  .back   { transform: translateZ(-22px) rotateY(180deg); }
+  .left   { transform: translateX(-22px) rotateY(-90deg); }
+  .right  { transform: translateX(22px) rotateY(90deg); }
+  .top    { transform: translateY(-22px) rotateX(90deg); }
+  .bottom { transform: translateY(22px) rotateX(-90deg); }
+}
+
+@keyframes cubeSpin {
+  from { transform: rotateX(0deg) rotateY(0deg); }
+  to { transform: rotateX(360deg) rotateY(360deg); }
+}
 
