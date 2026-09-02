@@ -1,9 +1,9 @@
 .App {
   text-align: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 $primary-color: #ffa6c9;

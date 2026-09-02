@@ -2,9 +2,10 @@
     background: var(--pink-light, #febed8);
     border-right: 4px solid var(--pink-dark, #fd9bc2);
     width: 70px;
-    height: 100%;
-    position: absolute;
+    height: 100vh;
+    position: fixed;
     top: 0;
+    left: 0;
     z-index: 3;
     min-height: 500px;
 
