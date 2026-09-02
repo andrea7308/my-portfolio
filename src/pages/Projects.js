@@ -28,7 +28,6 @@ const projects = [
     // type below. Drop a react-three-fiber <Canvas> straight into
     // .project-screen[data-screen="model3d"] when the model is ready.
     screen: { type: "model3d", note: "3D MODEL LOADING..." },
-    link: "https://github.com/andrea7308/ROB_2004_Final_Project.git",
   },
   {
     id: "quadruped-pupper",
