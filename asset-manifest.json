@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/andrea7308/andrea7308.github.io/my-portfolio/static/css/main.119ec413.css",
+    "main.js": "/andrea7308/andrea7308.github.io/my-portfolio/static/js/main.0ab42400.js",
+    "static/js/453.2b426ada.chunk.js": "/andrea7308/andrea7308.github.io/my-portfolio/static/js/453.2b426ada.chunk.js",
+    "static/media/helvetica-neu.ttf": "/andrea7308/andrea7308.github.io/my-portfolio/static/media/helvetica-neu.8a19678078a6b21c8057.ttf",
+    "static/media/LaBelleAurore.woff2": "/andrea7308/andrea7308.github.io/my-portfolio/static/media/LaBelleAurore.a83c1c58fd7e43972e4a.woff2",
+    "static/media/logo.png": "/andrea7308/andrea7308.github.io/my-portfolio/static/media/logo.283723aaa0f50b3c3fe4.png",
+    "static/media/CoolveticaRg-Regular.woff2": "/andrea7308/andrea7308.github.io/my-portfolio/static/media/CoolveticaRg-Regular.7d1f3b1dd46ad6557a17.woff2",
+    "index.html": "/andrea7308/andrea7308.github.io/my-portfolio/index.html",
+    "main.119ec413.css.map": "/andrea7308/andrea7308.github.io/my-portfolio/static/css/main.119ec413.css.map",
+    "main.0ab42400.js.map": "/andrea7308/andrea7308.github.io/my-portfolio/static/js/main.0ab42400.js.map",
+    "453.2b426ada.chunk.js.map": "/andrea7308/andrea7308.github.io/my-portfolio/static/js/453.2b426ada.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.119ec413.css",
+    "static/js/main.0ab42400.js"
+  ]
+}
