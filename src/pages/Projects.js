@@ -34,7 +34,7 @@ const projects = [
     title: "Quadruped Pupper Robot",
     tag: "ROBOTICS · KINEMATICS · CONTROL SYSTEMS",
     description:
-      "A quadruped robot project focusing on locomotion and control systems.",
+      "A quadruped robot project focusing on locomotion and control systems. The robot is designed to walk, trot, and perform basic maneuvers using a combination of kinematic modeling and control algorithms. The project involves the integration of sensors for balance and navigation. I worked on giving the robot the ability to track and follow a target using computer vision and sensor feedback, allowing it to navigate its environment autonomously. The robot's control system was optimized for stability and responsiveness using state estimation techniques and ROS-based control loops.",
     stats: [
       { label: "LEGS", value: "4" },
       { label: "DOF", value: "12" },
