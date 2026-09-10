@@ -16,7 +16,7 @@ const Contact = () => {
 
           <div className="contact-content">
             <p className="contact-description">
-              Let's connect! Check out my profiles and download my resume.
+              Let's connect! Check out my profiles and my resume.
             </p>
 
             <div className="contact-links-grid">
@@ -49,7 +49,9 @@ const Contact = () => {
               </a>
 
               <a
-                href="/resume.pdf"
+                href="https://github.com/andrea7308/my-portfolio/blob/main/public/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 download
                 className="contact-card pixel-corners resume-card"
               >
@@ -57,8 +59,8 @@ const Contact = () => {
                   <FontAwesomeIcon icon={faFile} />
                 </div>
                 <h3>Resume</h3>
-                <p>Download my resume (PDF)</p>
-                <span className="card-link">Download →</span>
+                <p>Check out my resume</p>
+                <span className="card-link">View Resume</span>
               </a>
             </div>
 
