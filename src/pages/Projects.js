@@ -23,6 +23,7 @@ const projects = [
       { label: "SENSOR RANGE", value: "0.5–5 M" },
       { label: "TOP SPEED", value: "1 M/S" },
     ],
+    link: "https://docs.google.com/document/d/1rdK9TT7sOu4Yd1dGYwUfMYdxBGKj0hzOInrFYdXPmUo/edit?usp=sharing",
   },
   {
     id: "quadruped-pupper",
@@ -56,7 +57,7 @@ function Projects() {
             <div className="project-hover-link">
               {project.link && (
                 <a href={project.link} target="_blank" rel="noopener noreferrer">
-                  View on GitHub
+                  Learn More
                 </a>
               )}
             </div>
