@@ -8,11 +8,6 @@ const Contact = () => {
   return (
     <div className="contact-content-wrapper">
         <div className="contact-container">
-          <div className="contact-heading">
-            <span className="pac-dot"></span>
-            <h1>Get in Touch</h1>
-            <span className="pac-dot"></span>
-          </div>
 
           <div className="contact-content">
             <p className="contact-description">
