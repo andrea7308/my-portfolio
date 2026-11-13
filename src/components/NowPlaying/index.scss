@@ -1,0 +1,145 @@
+/* Just the record; the song label slides out only while hovering it */
+.now-playing {
+  position: fixed;
+  left: clamp(16px, 3vw, 32px);
+  bottom: clamp(16px, 3vw, 28px);
+  z-index: 60;
+  padding: 6px;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: rgba(13, 12, 11, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--paper);
+  cursor: pointer;
+  text-align: left;
+  opacity: 0;
+  animation: npIn 1.2s var(--ease-film) 3s forwards;
+  transition: border-color 0.4s;
+
+  &:hover,
+  &:focus-visible {
+    border-color: rgba(194, 154, 92, 0.45);
+  }
+}
+
+@keyframes npIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.vinyl {
+  position: relative;
+  display: block;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.18), transparent 40%),
+    repeating-radial-gradient(circle, #111 0 1px, #1c1a18 1px 2px);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.6);
+  animation: spin 1.8s linear infinite;
+  animation-play-state: paused;
+
+  .is-playing & {
+    animation-play-state: running;
+  }
+
+  .vinyl__label {
+    position: absolute;
+    inset: 33%;
+    border-radius: 50%;
+    background: var(--oxblood);
+    box-shadow: inset 0 0 0 1px rgba(194, 154, 92, 0.6);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 42%;
+      border-radius: 50%;
+      background: var(--ink);
+    }
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.now-playing__text {
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: rgba(13, 12, 11, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  width: max-content;
+  max-width: min(260px, calc(100vw - 100px));
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(-10px, -50%, 0);
+  transition:
+    opacity 0.35s var(--ease-film),
+    transform 0.45s var(--ease-film),
+    visibility 0s linear 0.45s;
+
+  .now-playing:hover &,
+  .now-playing:focus-visible & {
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0, -50%, 0);
+    transition:
+      opacity 0.35s var(--ease-film),
+      transform 0.45s var(--ease-film),
+      visibility 0s;
+  }
+}
+
+.now-playing__status {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.now-playing__track {
+  font-family: var(--serif-display);
+  font-size: 16px;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation: trackIn 0.8s var(--ease-film);
+
+  em {
+    color: var(--paper-dim);
+  }
+}
+
+@keyframes trackIn {
+  from { opacity: 0; transform: translateY(6px); filter: blur(3px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .now-playing,
+  .now-playing__track {
+    animation: none;
+    opacity: 1;
+  }
+
+  .vinyl {
+    animation: none;
+  }
+
+  .now-playing__text {
+    transition: none;
+  }
+}

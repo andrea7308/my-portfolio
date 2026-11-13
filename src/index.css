@@ -1,18 +1,16 @@
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  background: #0d0c0b;
 }
-
-
-
 
 body {
   margin: 0;
-  font: 300 11px/1.4 'Helvetica Neue', 'sans-serif';
-  color: #444;
-  background: #febed8;
+  font: 300 17px/1.65 'Newsreader', Georgia, serif;
+  color: #e6dccb;
+  background: #0d0c0b;
   overflow-y: auto;
   overflow-x: hidden;
-  display: block;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scrollbar-width: none;
@@ -22,7 +20,17 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+::selection {
+  background: #7a2a2a;
+  color: #f3ead9;
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'DM Mono', Menlo, Monaco, Consolas, monospace;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
